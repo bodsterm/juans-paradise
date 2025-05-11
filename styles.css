@@ -1,0 +1,123 @@
+:root {
+    --background: #ffffff;
+    --text: #333333;
+    --input-bg: #f0f0f0;
+    --button-bg: #6200ea;
+    --button-text: #ffffff;
+}
+
+body.dark-mode {
+    --background: #2e2e2e;
+    --text: #e0e0e0;
+    --input-bg: #3a3a3a;
+    --button-bg: #bb86fc;
+    --button-text: #000000;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: #6200ea;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.search-container {
+    margin: 20px 0;
+}
+
+#username-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text);
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--input-bg);
+    display: none;
+}
+
+.result-container.show {
+    display: block;
+}
